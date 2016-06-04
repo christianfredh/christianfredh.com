@@ -9,21 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var blogpost_list_component_1 = require('./blogpost-list.component');
 var blogpost_service_1 = require('./blogpost.service');
-var AppComponent = (function () {
-    function AppComponent() {
+var BlogPostListComponent = (function () {
+    function BlogPostListComponent(blogPostService) {
+        this.blogPostService = blogPostService;
     }
-    AppComponent = __decorate([
+    BlogPostListComponent.prototype.ngOnInit = function () {
+        this.blogPosts = this.blogPostService.getBlogPosts();
+    };
+    BlogPostListComponent = __decorate([
         core_1.Component({
-            selector: 'christian-fredh-com',
-            templateUrl: 'app/app.component.html',
-            directives: [blogpost_list_component_1.BlogPostListComponent],
-            providers: [blogpost_service_1.BlogPostService],
+            selector: 'blogpost-list',
+            templateUrl: 'app/blogpost-list.component.html'
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [blogpost_service_1.BlogPostService])
+    ], BlogPostListComponent);
+    return BlogPostListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.BlogPostListComponent = BlogPostListComponent;
+//# sourceMappingURL=blogpost-list.component.js.map
