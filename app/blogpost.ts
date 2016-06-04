@@ -2,6 +2,6 @@ export class BlogPost {
     id : string;
     title: string;
     created: Date;
-    updated: Date;
+    lastEdited: Date;
     markdownContent : string;
 }
