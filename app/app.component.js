@@ -9,7 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var blogpost_list_component_1 = require('./blogpost-list.component');
+var blogpost_component_1 = require('./blogpost.component');
 var blogpost_service_1 = require('./blogpost.service');
 var AppComponent = (function () {
     function AppComponent() {
@@ -18,9 +20,19 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'christian-fredh-com',
             templateUrl: 'app/app.component.html',
-            directives: [blogpost_list_component_1.BlogPostListComponent],
-            providers: [blogpost_service_1.BlogPostService],
-        }), 
+            directives: [
+                router_deprecated_1.ROUTER_DIRECTIVES,
+                blogpost_list_component_1.BlogPostListComponent
+            ],
+            providers: [
+                router_deprecated_1.ROUTER_PROVIDERS,
+                blogpost_service_1.BlogPostService
+            ],
+        }),
+        router_deprecated_1.RouteConfig([
+            { path: '/', name: 'BlogPosts', component: blogpost_list_component_1.BlogPostListComponent, useAsDefault: true },
+            { path: '/:id', name: 'BlogPost', component: blogpost_component_1.BlogPostComponent }
+        ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;

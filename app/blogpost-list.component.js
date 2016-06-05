@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var blogpost_service_1 = require('./blogpost.service');
 var BlogPostListComponent = (function () {
     function BlogPostListComponent(blogPostService) {
@@ -20,7 +21,8 @@ var BlogPostListComponent = (function () {
     BlogPostListComponent = __decorate([
         core_1.Component({
             selector: 'blogpost-list',
-            templateUrl: 'app/blogpost-list.component.html'
+            templateUrl: 'app/blogpost-list.component.html',
+            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
         }), 
         __metadata('design:paramtypes', [blogpost_service_1.BlogPostService])
     ], BlogPostListComponent);

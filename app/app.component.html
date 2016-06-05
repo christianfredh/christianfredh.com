@@ -1,1 +1,17 @@
-<blogpost-list>
+<div>
+    <header>
+        <h1>Christian Fredh</h1>
+        <p>Come up with something catchy and a bit fun here...</p>
+        <nav>
+            <ul>
+                <li><a href="" [routerLink]="['BlogPosts']">Blog</a></li>
+                <li><a href="" [routerLink]="['BlogPost', { id: 'about-me' }]">About me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <router-outlet></router-outlet>
+        </section>
+    </main>
+</div>

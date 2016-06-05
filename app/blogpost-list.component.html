@@ -1,7 +1,7 @@
 <ul>
     <li *ngFor="let blogPost of blogPosts | async">
         <article>
-            <a href=""><h2>{{blogPost.title}}</h2></a>
+            <a href="" [routerLink]="['BlogPost', { id: blogPost.id }]"><h2>{{blogPost.title}}</h2></a>
             <span>{{blogPost.created}} (edited: {{blogPost.lastEdited}})</span>
             <div>{{blogPost.markdownContent}}</div>
         </article>
