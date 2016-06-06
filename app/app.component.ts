@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from '@angular/router-deprecated'
+import { HTTP_PROVIDERS } from '@angular/http';
 import { BlogPostListComponent } from './blogpost-list.component'
 import { BlogPostComponent } from './blogpost.component'
 import { BlogPostService } from './blogpost.service'
@@ -13,6 +14,7 @@ import { BlogPostService } from './blogpost.service'
     ],
     providers: [
         ROUTER_PROVIDERS,
+        HTTP_PROVIDERS,
         BlogPostService
     ],
 })

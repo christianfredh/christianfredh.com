@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
+var http_1 = require('@angular/http');
 var blogpost_list_component_1 = require('./blogpost-list.component');
 var blogpost_component_1 = require('./blogpost.component');
 var blogpost_service_1 = require('./blogpost.service');
@@ -26,6 +27,7 @@ var AppComponent = (function () {
             ],
             providers: [
                 router_deprecated_1.ROUTER_PROVIDERS,
+                http_1.HTTP_PROVIDERS,
                 blogpost_service_1.BlogPostService
             ],
         }),
