@@ -9,20 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
 var blogpost_service_1 = require('./blogpost.service');
 var BlogPostComponent = (function () {
-    function BlogPostComponent(blogPostService) {
+    function BlogPostComponent(routeParams, blogPostService) {
+        this.routeParams = routeParams;
         this.blogPostService = blogPostService;
     }
     BlogPostComponent.prototype.ngOnInit = function () {
-        this.blogPost = this.blogPostService.getBlogPost('whatever right now');
+        var _this = this;
+        var id = this.routeParams.get('id');
+        this.blogPostService
+            .getBlogPost(id)
+            .then(function (blogPost) { return _this.blogPost = blogPost; });
     };
     BlogPostComponent = __decorate([
         core_1.Component({
             selector: 'blogpost',
-            templateUrl: 'app/blogpost.component.html'
+            templateUrl: 'app/blogpost.component.html',
         }), 
-        __metadata('design:paramtypes', [blogpost_service_1.BlogPostService])
+        __metadata('design:paramtypes', [router_deprecated_1.RouteParams, blogpost_service_1.BlogPostService])
     ], BlogPostComponent);
     return BlogPostComponent;
 }());

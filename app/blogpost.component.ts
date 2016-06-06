@@ -1,17 +1,25 @@
-import { Component, OnInit } from '@angular/core'
-import { BlogPost } from './blogpost'
-import { BlogPostService } from './blogpost.service'
+import { Component, OnInit } from '@angular/core';
+import { RouteParams } from '@angular/router-deprecated';
+import { BlogPost } from './blogpost';
+import { BlogPostService } from './blogpost.service';
 
 @Component({
     selector: 'blogpost',
-    templateUrl: 'app/blogpost.component.html'
+    templateUrl: 'app/blogpost.component.html',
 })
 export class BlogPostComponent implements OnInit {
-    blogPost: Promise<BlogPost>;
+    blogPost: BlogPost;
     
-    constructor(private blogPostService : BlogPostService) { }
+    constructor(
+        private routeParams : RouteParams,
+        private blogPostService : BlogPostService
+    ) { }
     
     ngOnInit() {
-        this.blogPost = this.blogPostService.getBlogPost('whatever right now');
+        let id = this.routeParams.get('id');
+        
+        this.blogPostService
+            .getBlogPost(id)
+            .then(blogPost => this.blogPost = blogPost);
     }
 }

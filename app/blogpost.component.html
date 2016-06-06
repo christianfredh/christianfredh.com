@@ -1,3 +1,5 @@
-<h2>{{blogPost.title}}</h2>
-
-Content and stuff
+<article *ngIf="blogPost">
+    <h2>{{blogPost.title}}</h2>
+    <span>{{blogPost.created | date}} (edited: {{blogPost.lastEdited | date}})</span>
+    <div>{{blogPost.markdownContent}}</div>
+</article>

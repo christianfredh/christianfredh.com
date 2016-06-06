@@ -2,7 +2,7 @@
     <li *ngFor="let blogPost of blogPosts | async">
         <article>
             <a href="" [routerLink]="['BlogPost', { id: blogPost.id }]"><h2>{{blogPost.title}}</h2></a>
-            <span>{{blogPost.created}} (edited: {{blogPost.lastEdited}})</span>
+            <span>{{blogPost.created | date}} (edited: {{blogPost.lastEdited  | date}})</span>
             <div>{{blogPost.markdownContent}}</div>
         </article>
     </li>
