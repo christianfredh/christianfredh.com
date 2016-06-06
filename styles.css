@@ -1,8 +1,45 @@
-h1 {
+h1, h2 {
   color: #369;
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
   font-size: 250%;
 }
+
+h2 {
+  font-size: 150%;
+}
+
 body {
   margin: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+article {
+  margin-top: 2em;
+}
+
+header {
+  padding-bottom: 2em;
+  border-bottom: 1px solid black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.blog-post-link {
+  display: block;
+}
+
+.blog-post-created {
+  display: block;
+  font-size: 0.8em;
+  color: lightgrey;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.blog-post-content {
+  margin-top: 1em;
 }

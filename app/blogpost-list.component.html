@@ -1,9 +1,9 @@
 <ul>
     <li *ngFor="let blogPost of blogPosts | async">
         <article>
-            <a href="" [routerLink]="['BlogPost', { id: blogPost.id }]"><h2>{{blogPost.title}}</h2></a>
-            <span>{{blogPost.created | date}} (edited: {{blogPost.lastEdited  | date}})</span>
-            <div>{{blogPost.markdownContent}}</div>
+            <a class="blog-post-link" href="" [routerLink]="['BlogPost', { id: blogPost.id }]"><h2>{{blogPost.title}}</h2></a>
+            <div class="blog-post-content">{{blogPost.markdownContent}}</div>
+            <span class="blog-post-created">{{blogPost.created | date}}<span *ngIf="blogPost.created !== blogPost.lastEdited"> (edited: {{blogPost.lastEdited  | date}})</span></span>
         </article>
     </li>
 </ul>
