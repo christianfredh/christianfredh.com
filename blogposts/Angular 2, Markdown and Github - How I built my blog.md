@@ -27,3 +27,20 @@ some styling
 edited condition
 
 github json map
+
+
+let blogPost : BlogPost = {
+                        id: element.name, 
+                        title: title,
+                        created: sameDate,
+                        lastEdited: sameDate,
+                        markdownContent: ''
+                    };
+                    
+                    this.http
+                        .get(element.download_url)
+                        .toPromise()
+                        .then(reponse => {
+                            blogPost.markdownContent = reponse.text();
+                        })
+                        .catch(this.handleError);
