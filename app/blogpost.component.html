@@ -1,5 +1,5 @@
 <article *ngIf="blogPost">
     <h2>{{blogPost.title}}</h2>
     <div class="blog-post-content">{{blogPost.markdownContent}}</div>
-    <span class="blog-post-created">{{blogPost.created | date}} (edited: {{blogPost.lastEdited | date}})</span>
+    <span class="blog-post-created">{{blogPost.created | date}}<span *ngIf="blogPost.created !== blogPost.lastEdited"> (edited: {{blogPost.lastEdited  | date}})</span></span>
 </article>
